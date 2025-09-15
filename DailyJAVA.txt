@@ -1,0 +1,176 @@
+#1.Course Contents Explaination 
+
+#2.Java History , Versions 
+	
+JAVA 8 (LTS)
+James Gosling - Father of Java Programming language
+Pavni Diwanji (Indian who worked in sun microsystems and was in the development team for development of servlet)
+
+Applet - Small java program which runs on a server
+Java ME (Micro edition) => Mobile development 
+Java SE (Standard edition) => Desktop app development
+Java EE (Enterprise edition) => Web Development
+ 
+#3.Java Installation (Directory Structures) 
+
+- Installed JDK version 21
+	We saw the folder structure in JDK -
+	1. bin => java libraries [ java compiler(javac.exe) + app launcher (java.exe) + debugger ]
+	2. include => Header files required for JNI programming (Java Native Interface)
+		JNI - (Integration of C/CPP in java)
+	3. jre => app launcher (java.exe) + rt.jar(java archives) + jvm.dll (supporting libraries)
+	4. src.zip => source codes of java classes like (System class, Scanner class , PrintStream class) THEREFORE (JAVA IS OPEN SOURCE) [1]
+	
+
+#4.Creating simple hello-world on notepad(open the terminal , save file ,Compilation and execution) (src to byte code)
+
+	javac Program.java - convert java source code into byte code [.class file]
+	java Program -  [.class] file is passed to JVM (bytecode to machine code) 
+
+#5.Explaining Compilation of Java Program with Diagram
+
+	Program.java using(java compiler) => Program.class (using applauncher) => JVM 
+	JVM - consists of  4 parts 
+		1. class loader - (loads .class files into memory area )
+		2. Memory Area - (three type of memory STACK, HEAP , METHOD) 
+		3. JIT + Interpreter - JIT (Just in time Compilation) used for caching same statements which are used frequently (like system.out.println)
+		4. Garbage Collector - Automatic memory management (Automatic frees the object)
+
+	rt.jar => precompiled classes like (System.class , Integer class , String class etc) 
+	--------
+	~ If we use System.out.println then it only loads System.class not others , only required classes are used and loaded 
+		THEREFORE (JAVA IS DYNAMIC) [2]
+
+#6.JDK VS JRE
+
+Development Tools - Compiler , Debugger , Preprocessor , etc
+
+SDK => Development Tools + Documentation + Runtime Environment + Supporting Libraries
+	
+JDK => Java Development Tools + Java Documentation + Java Runtime Environment + Java Supporting libraries
+
+JDK => Java Development Tools + Java Documentation + JVM + rt.jar
+
+JDK => Java Development Tools + Java Documentation + JRE [JVM + rt.jar]
+
+ON DEVELOPER MACHINE => JDK + JRE 
+ON CLIENT MACHINE => JRE (only)
+
+(JAVA IS PLATFORM DEPENDENT) [3]
+------------------------------------------------------------------------------------------------------------
+
+#8.Creating a notepad file with multiple class 
+
+Program.java file =>
+class First {
+	
+	public static void main(String[] args) {
+		System.out.println("First");
+	}
+}
+
+class Second {
+	
+	public static void main(String[] args) {
+		System.out.println("Second");
+	}
+}
+
+class Third {
+	
+	public static void main(String[] args) {
+		System.out.println("Third");
+	}
+}
+
+--------------------------------------------------------
+Output=>
+
+Microsoft Windows [Version 10.0.26100.6584]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\HP>cd C:\Users\HP\OneDrive\Desktop
+
+C:\Users\HP\OneDrive\Desktop>javac Program.java
+
+C:\Users\HP\OneDrive\Desktop>java Program
+Error: Could not find or load main class Program
+Caused by: java.lang.ClassNotFoundException: Program
+
+C:\Users\HP\OneDrive\Desktop>java First
+First
+
+C:\Users\HP\OneDrive\Desktop>java Second
+Second
+
+C:\Users\HP\OneDrive\Desktop>java Third
+Third
+-------------------------------------------------------
+CONSIDER classes are not public 
+~ We can write multiple clases in single .java file 
+~ For each class separate .class file is created (First.class , Second.class , Third.class) 
+~ We need to execute every .class file by giving separate java command 
+~ We cannot write multiple public classes in single .java file 
+~ Name of the public class and filename should be same
+~ Multiple public classes are written in multiple .java files
+
+#9.Creating a notepad file with multiple class but one public class (Show error)
+
+#10.Creating the first Hello world Program in STS (Explanation) 
+
+public class Program {
+	
+	public static void main(String[] args) {
+		System.out.println("HelloWorld");
+	}
+}
+----------------------------------------------------------------------
+
+Explanation =>  
+
+class  System {
+	static Printstream out ;    //Association
+}
+
+System.out.println("HelloWorld");
+
+We have 2 perspectives - 
+1. System is a class in java.lang package , out is a static member of the System class.
+2. println is a method of the PrintStream class.
+
+#11.Classpath 
+
+#12.Classpath demo notepad (Hello world)
+    
+
+#13.Method overload Multiple main (in STS) 
+
+#14.Main case sensitive 
+
+#15.Data types 
+
+	Primitive - GETS SPACE ON STACK SECTION
+
+	Non-Primitive (Reference types) - GETS SPACE ON HEAP SECTION
+
+#17.Area of rectangle (len, br , area ) 
+
+#16.Scanner class (user-name , roll , marks) (Problem) 
+
+	In java.util package
+
+#18.Narrowing and widening 
+
+Widening - no explicit casting required
+
+Narrowing - explicit casting is required
+
+
+~ (JAVA IS STRONGLY TYPED) [4]
+~ we can give same name to method but different arguments this concepts is called as method overloading
+~ main method in java can be overloaded 
+~ JVM only identifies 
+	public static void main (String [] args)
+
+
+        
