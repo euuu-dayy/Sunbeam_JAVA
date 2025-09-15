@@ -173,4 +173,96 @@ Narrowing - explicit casting is required
 	public static void main (String [] args)
 
 
+IMPPPPP ******   (demo04) 
+Imagine you’re filling a form
+
+The program is like a person asking you questions one by one:
+
+Program: “Roll number please?”
+You type: 101 and press Enter.
+
+The program takes only 101 (the number).
+
+But the Enter key (\n) you pressed is still sitting in the input box, waiting.
+
+Program: “Now tell me your name.”
+It calls sc.nextLine().
+
+But oh! The input box already has that leftover Enter from the previous step.
+
+So instead of waiting for you to type a name, the program thinks:
+“Oh, I already see a newline! That must be the answer.”
+
+It gives you an empty name without letting you type.
+
+The Fix (extra sc.nextLine())
+Before asking for the actual name, we insert:
+
+sc.nextLine(); // throw away the leftover Enter
+
+
+This eats up that old Enter key from the buffer.
+
+Now, when the program says “Name please?”, the input box is empty and it really waits for you to type your full name.
+
+✅ Simple Rule to Remember:
+
+nextInt(), nextDouble(), nextLong(), etc. → leave the Enter key behind.
+
+nextLine() → reads until it finds an Enter key.
+
+So if you mix nextInt() (or similar) with nextLine(), you need that extra nextLine() in between to clear the junk Enter.
+
+
+You said:
+########## You mean to say next line when sees blank space it terminates ?/ ##########
+
+ChatGPT said:
+
+Yes 👍 you’re very close, but let me refine it so it’s crystal clear:
+
+How nextLine() works
+
+nextLine() reads everything from the current position up to the next newline character (\n).
+
+That newline comes from you pressing the Enter key.
+
+After reading, it removes that newline from the buffer.
+
+Example
+int roll = sc.nextInt();   // you type: 101 + Enter
+String name = sc.nextLine();
+
+
+You type 101 and press Enter.
+Input buffer looks like this:
+
+[101][\n]
+
+
+nextInt() reads only 101.
+Buffer now:
+
+[\n]
+
+
+nextLine() sees the \n immediately.
+
+It reads everything up to \n.
+
+But there’s nothing before \n, so it returns an empty string.
+
+Important distinction 🚨
+
+nextLine() terminates at a newline (\n), not at blank space.
+
+Blank spaces ( ) are just characters for nextLine() — it will happily include them in the string.
+
+The only thing that makes nextLine() stop is the newline character (Enter).
+
+✅ So to answer your question directly:
+
+No, nextLine() doesn’t terminate at blank space.
+
+It terminates at the Enter key (newline).
         
