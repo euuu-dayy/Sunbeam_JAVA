@@ -1,0 +1,191 @@
+# Package Tutorial (demo01)
+
+#Access Modifiers using 2 Different Packages (demo02)
+	- Visibility of Class A members
+
+#Arrays- 
+	1.Arrays are non primitive (Reference type)
+	2.Arrays are stored on heap section
+
+	=> Types of initialization in java -
+
+	1. int [] arr1 = new int[3]; //default values 0
+	2. int [] arr = new int[];   // NOT OK
+	3. int [] arr2 = new int[] {10,20,30}; //OK
+	4. int [] arr = new int[10] {10,20,30}; // NOT OK 
+	//PARTIAL INITIALIZATION OF ARRAY IN JAVA IS NOT OK
+	5. int [] arr3 = {10,20,30}; 
+	
+	6. int arr[]; // reference 
+		arr = new int[3]; // instance 
+		arr[0] = 10; 
+		arr[1] = 20; 
+		arr[2] = 30; 
+	
+	7. int[] arr = new int[-3]; //java.lang.NegativeArraySizeException
+	
+	8. int[] arr = new int[3]; 
+		System.out.println(arr[-1]);//java.lang.ArrayIndexOutOfBoundsException
+	
+
+	Programs => 
+	- Sum of elements in Array (demo03)
+	
+
+#2D Array - 
+	
+	1. int [][] arr1 = new int [][]; //ERROR
+	2. int [][] arr2 = new int [4][4]; //OK
+	3. int arr3 [][] = new int [3][3]; //OK	
+	4. int arr [][] = new int [][] {{1,2},{3,4}}; //OK
+	
+	5. int arr [][] = new int [][] {{},{}}; //OK
+		if printed using -
+		
+		for(int i=0 ; i< arr.length; i++) {
+			for(int j=0 ; j< arr.length; j++) {
+				System.out.println(arr[i][j]);
+			}
+		}
+		
+		//ArrayIndexOutOfBoundException ****	
+
+#Ragged Array -(demo07)
+
+import java.util.Scanner;
+
+public class Program{
+	
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int [][] arr = new int [4][];
+		arr[0] = new int [1];
+		arr[1] = new int [2];
+		arr[2] = new int [3];
+		arr[3] = new int [4];
+		
+
+		System.out.println("Entered elements are: ");
+		for(int i= 0 ; i < arr.length;i++) {
+			for(int j=0 ; j< arr[i].length;j++) {
+				 System.out.print(arr[i][j]+ " ");
+			}
+			System.out.println();
+		}
+		
+	
+		System.out.println("Enter elements: ");
+		for(int i= 0 ; i < arr.length;i++) {
+			for(int j=0 ; j< arr[i].length;j++) {
+			arr[i][j]=sc.nextInt();
+			}
+		}
+		
+		System.out.println("Enter elements: ");
+		for(int i= 0 ; i < arr.length;i++) {
+			for(int j=0 ; j< arr[i].length;j++) {
+			System.out.print(arr[i][j]);
+			}
+			System.out.println();
+		}
+		
+	}
+}
+
+#Array of References - (demo08)
+
+	Human[] arr = new Human[3];
+
+	for(int i=0 ; i< arr.length; i++){
+		arr[i].display();              //NULL POINTER EXCEPTION
+	
+	}
+
+
+	- Array of object is actually array of references , by default these references are null , its programmers responsibility too init the reference 
+	- Otherwise it will show NULL POINTER EXCEPTION
+	
+
+	Programs => 
+	
+	Algorithm -
+	//Human.java
+	1. Created Human class with fields age , weight , height
+	2. Created constructor
+	3. Created display method
+
+	//Program.java
+	1.Created array of references in Program.java  (Here we have seen 2 syntaxes)
+	2.Assigned Objects to the indexes of array	
+	2.On each object we call display method using for loop
+
+#NULL vs NULL POINTER EXCEPTION
+
+#Helper Methods (demo09) -
+	Arrays id Helper Class -
+		Some common methods of Arrays of this class are -
+		1. Arrays.toString();
+		2. Arrays.sort();
+		3. Arrays.binarySearch(arr,3);
+
+#CommandLine Arguments -
+	
+//CommandLine.java
+
+package com.sunbeam ;
+
+public class CommandLine{
+
+
+	public static void main(String[] args){
+		
+		int sum =0 ;
+		for(int i=0 ; i< args.length ; i++){
+		
+		String arg = args[i];
+		int num = Integer.parseInt(arg);
+		sum += num ;
+		
+		}
+
+		System.out.println("Sum of Command Line arguments is : " + sum);
+	}
+}
+
+Output -
+
+C:\Users\HP\OneDrive\Desktop\test>java com.sunbeam.CommandLine 10 20 30
+Sum of Command Line arguments is : 60
+
+
+# Swapping Problem -
+
+	- In java primitive types are pass by value and non primitive types (like array) are pass by reference
+	- We cannot use pointer or reference in java 
+	- So we use Array to swap and pass array as a reference and then swap the elements of array
+
+	Interview Question ???
+	*** How to achieve call by address in java ?
+	=> Using Arrays
+
+#Method Overloading -
+	Number of Parameters
+	Order of Parameters
+	Type of parameters
+
+	- Static methods can  be overloaded
+	- Return type is not considered in method overloading
+
+#Anonymous Array
+#Variable Arity Method
+#Object Class
+
+
+
+
+
+
+
+
+
