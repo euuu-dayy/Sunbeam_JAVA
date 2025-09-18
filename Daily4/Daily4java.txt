@@ -1,0 +1,70 @@
+# Use of Static Variable programmatically
+
+1.Example without static (each object has its own copy)
+
+class Restaurant {
+    double dosaPrice = 30;   // non-static (instance variable)
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Restaurant r1 = new Restaurant();
+        Restaurant r2 = new Restaurant();
+
+        System.out.println("Before change:");
+        System.out.println("r1 dosa price = " + r1.dosaPrice);
+        System.out.println("r2 dosa price = " + r2.dosaPrice);
+
+        // change dosa price using r1
+        r1.dosaPrice = 50;
+
+        System.out.println("After change:");
+        System.out.println("r1 dosa price = " + r1.dosaPrice);
+        System.out.println("r2 dosa price = " + r2.dosaPrice);
+    }
+}
+
+Output -
+
+Before change:
+r1 dosa price = 30.0
+r2 dosa price = 30.0
+After change:
+r1 dosa price = 50.0
+r2 dosa price = 30.0
+
+
+2. Example with static (shared across all objects)
+
+class Restaurant {
+    static double dosaPrice = 30;   // static (class variable)
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Restaurant r1 = new Restaurant();
+        Restaurant r2 = new Restaurant();
+
+        System.out.println("Before change:");
+        System.out.println("r1 dosa price = " + r1.dosaPrice);
+        System.out.println("r2 dosa price = " + r2.dosaPrice);
+
+        // change dosa price using r1
+        r1.dosaPrice = 50;
+
+        System.out.println("After change:");
+        System.out.println("r1 dosa price = " + r1.dosaPrice);
+        System.out.println("r2 dosa price = " + r2.dosaPrice);
+    }
+}
+
+Output -
+
+Before change:
+r1 dosa price = 30.0
+r2 dosa price = 30.0
+After change:
+r1 dosa price = 50.0
+r2 dosa price = 50.0
+
+
