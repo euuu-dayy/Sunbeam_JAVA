@@ -1,3 +1,71 @@
+		################# DAY4 ################
+
+		#1. Three types of Initializer (demo01)
+	
+1. Field init (least priority)
+2. Object init
+3. Constructor init (most priority)
+	
+- If there are multiple object init block they are executed according to the order of declaration
+- Consider the priority , if variable is initialized in constructor and then again modified in object initializer then this will not work because constructor initializer has higest priority and same in case of field initializer but the vice versa will modify the initialized value
+
+
+		#2. Final Keyworrd (demo02)
+1. final field
+2. final variable
+3. final method
+4. final class
+
+- You can initialize final variable in either of "Initializer type" (i.e field init , object init , constructor init)
+
+		#3. Static keyword
+
+- In cpp we were not able to initialize the static variable inside the class we need to give global definition and initialize outside the class by giving global definition
+- In java there is no such scene we can initialize just after declaration on same line 
+- Static variable gets space on data section
+- A single copy is shared among all the objects
+- Static fields are accessed using Classname
+- Typically static field operates on static field
+- static method can only modify static fields and not non static fields
+- but non static method can modify static fields also non static fields
+- If any field is static then its getters and setter should also be static
+- static method dont get this reference bcoz they are class level fields
+- static should be inside class scope not in method , Otherwise compiler error . main is also a method so inside main we cant declare static field
+- Calling static method from static method , writhing classname is optional
+- Since static method cant access non static fields they can be accessed by creating object
+eg.
+-------------------------------------------------------------------
+public class Student {
+    private String name;           // ❌ Instance field
+    private int rollNumber;        // ❌ Instance field
+
+    // Constructor
+    public Student(String name, int roll) {
+        this.name = name;
+        this.rollNumber = roll;
+    }
+
+    // Static method accessing instance fields via object
+    public static void printStudentInfo() {
+        // Create an object inside the static method
+        Student s = new Student("Alice", 101);
+
+        // Now access instance fields via 's'
+        System.out.println("Name: " + s.name);           // ✅ OK
+        System.out.println("Roll: " + s.rollNumber);     // ✅ OK
+    }
+
+    // Another static method — accepts object as parameter
+    public static void printStudent(Student student) {
+        System.out.println("Name: " + student.name);     // ✅ OK
+        System.out.println("Roll: " + student.rollNumber); // ✅ OK
+    }
+
+-------------------------------------------------------------------
+
+eg.
+-------------------------------------------------------------------
+
 # Use of Static Variable programmatically
 
 1.Example without static (each object has its own copy)
@@ -66,5 +134,121 @@ r2 dosa price = 30.0
 After change:
 r1 dosa price = 50.0
 r2 dosa price = 50.0
+
+-------------------------------------------------------------------
+
+		#4. static block
+
+# Applications
+
+1. Initialization of static fields
+2. One time initialization of whole class
+
+- static block is executed only once when class is loaded inside JVM 
+- If there are multiple static block they are executed according to the order if declaration
+- The static block ran only once, even though we created 2 objects and called a static method.
+
+✅ When is it executed?
+➡️ Only once — when the class is loaded by the JVM for the first time.
+
+This happens before:
+
+Any object is created
+Any static method is called
+Any static field is accessed (unless it’s a compile-time constant — more on that later)
+
+		#5. static import
+
+- import static methods like setPrice and getPrice , no need to use classname now 
+
+eg.
+	//Chair.setPrice(1000);  ✕
+	//setPrice(1000);    ✓
+This is possible due t0 :
+
+import static com.sunbeam.Chair.setPrice;
+
+-------------------------------------------------	
+(demo07) -
+if we want to initialize static variable in constructor then that should be done using classname.field_name not this.field_name
+
+-------------------------------------------------
+		
+		#6. Singleton Class (demo08)
+
+- In Java, a Singleton class is a class that is designed to have only one instance (object) during the lifetime of an application.
+- This single instance is shared across the entire application, and any attempt to create additional instances is prevented or redirected to the existing one.
+
+* step 1: Write a class with desired fields and methods.
+
+* step 2: Make constructor(s) private.
+- This prevents external code from creating new instances using new YourClass(). By making the constructor private, you ensure that no other class can instantiate it, which is critical for enforcing the “single instance” rule
+
+* step 3: Add a private static field to hold instance of the class.
+- private → so no one can access/replace it directly.
+  static → so it belongs to the class itself, not any instance, and is shared across all uses.
+
+* step 4: Initialize the field to single object using static field initializer or static block.  
+   
+* step 5: Add a public static method to return the object.
+
+		#7. .toString()  (demo09)
+
+// d1 = com.sunbeam.Date@3d012ddd <-- when not overridden
+// Object.toString() returns class name @ hashcode in hex
+// d1 = 6-2-2024 <-- to get state of object, override the method in the class
+
+
+		#8. Association (demo10)
+
+- Association in Java (and in Object-Oriented Programming in general) is a relationship between two or more classes that describes how objects of one class are connected to objects of another class.
+
+eg.
+
+private Date joining; // Association 
+
+public Emp() {
+		this.id = 0; 
+		this.name = ""; 
+		this.salary = 0.0; 
+		this.joining = new Date();  // INITIALIZATION
+ 	}
+
+
+public void accept( ) {
+		Scanner sc = new Scanner(System.in); 
+		System.out.print("Id : ");
+		id = sc.nextInt(); 
+		
+		sc.nextLine(); 
+		
+		System.out.print("Name : ");
+		name = sc.nextLine(); 
+		
+		System.out.print("Salary : ");
+		salary = sc.nextDouble(); 
+		
+		this.joining.accept();   // THING TO KEEP REMIND 
+	}
+
+
+### Association is a part of Inheritance but we can achieve association in java without using inheritance . It is possible with the use of packages 
+
+
+		#9. Inheritance
+
+- Inheritance is journey from Generalization to specialization 
+- Java doesn't support multiple "Implementation Inheritance" 
+- Java does support multiple "Interface Inheritance"
+
+class C implements A,B // This is OK
+
+class C extends A,B // This is NOT OK
+
+
+
+
+
+
 
 
