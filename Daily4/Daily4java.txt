@@ -245,10 +245,61 @@ class C implements A,B // This is OK
 
 class C extends A,B // This is NOT OK
 
+		#10. super keyword (demo11)
 
+- WHAT HAPPENED IN THE PROGRAM ?
+	1. created a person class
+	2. created student class inherited from class person
+	3. //Person p = new Person(); 
+	   //p.display();                 //Person parameterless ctor gets called
+		
+	   //Person p2 = new Person("Pratik", 31); //Person parametrized ctor gets called
+	   //p2.display();
+	
+	   //Student s1 = new Student(); //super class parametrless and then subclass parameterless ctor 
+	   //s1.display();
+		
+	   Student s2 = new Student("Ketan", 31, 1, "MCS", 70); 
+	   //Ideally super class parameterless and then subclass parameterless should be called
+	   //But here super class parameterless and then subclass parametrized ctor gets called
+	   s2.display();
 
+	   By using super keyword in subclass parametrized
+	   ctor we call super class parametrized ctor
+	   eg.	
+	-------------------------------------
+	
+	public Student(String name , int age , int roll, String course, int marks) {
+		super(name, age); 
+		System.out.println("public Student(int roll, String course, int marks)");
+		this.roll = roll;
+		this.course = course;
+		this.marks = marks;
+	}
+	--------------------------------------
 
+	## Uses of super keyword
+	1. Just like in cpp we did ctor delegation here also 
+	   we did this by using super in base class ctor
+	2. when super class method name and subclass method 
+	   name is same and if we are calling super class
+	   method from subclass writing super is mandatory
+	eg.
+	----------------------------------------
+	public void display( ) {         
+		//System.out.printf("Name : %s\nAge : %d\n",super.getName(),super.getAge());
+		super.display(); //JUST LIKE SHADOWING
+		System.out.printf("Id : %d\nCourse : %s\nMarks : %d\n",roll,course,marks);
+	}
+	---------------------------------------
 
+		#11. UPCASTING & DOWNCASTING (demo13)
+		- Did Inheritance used super
+
+1. UPCASTING - 
+
+- Assigning subclass reference to superclass reference is called as UPCASTING
+eg. Person p = (Person) emp ; // upcasting
 
 
 
