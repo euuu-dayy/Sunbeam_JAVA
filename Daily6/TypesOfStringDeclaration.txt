@@ -1,0 +1,108 @@
+	##String objects vs String literals##
+
+Example 01:
+
+String s1 = "Sunbeam";
+String s2 = "Sunbeam";
+System.out.println(s1 == s2); // ??? true
+System.out.println(s1.equals(s2)); // ??? true
+
+Example 02:
+
+String s1 = new String("Sunbeam");
+String s2 = new String("Sunbeam");
+System.out.println(s1 == s2); // ??? false
+System.out.println(s1.equals(s2)); // ??? true
+
+Example 03:
+
+String s1 = "Sunbeam";
+String s2 = new String("Sunbeam");
+System.out.println(s1 == s2); // ??? false
+System.out.println(s1.equals(s2)); // ??? true
+
+Example 04:
+
+String s1 = "Sunbeam";
+String s2 = "Sun" + "beam";
+System.out.println(s1 == s2); // ??? true
+System.out.println(s1.equals(s2)); // ??? true
+
+Example 05:
+
+String s1 = "Sunbeam";
+String s2 = "Sun";
+String s3 = s2 + "beam";
+System.out.println(s1 == s3); // ??? false
+System.out.println(s1.equals(s3)); // ??? true
+
+Example 06:
+
+String s1 = "Sunbeam";
+String s2 = new String("Sunbeam").intern();
+System.out.println(s1 == s2); // ???  true
+System.out.println(s1.equals(s2)); // ??? true
+
+Example 07:
+
+String s1 = "Sunbeam";
+String s2 = "SunBeam";
+System.out.println(s1 == s2); // ??? false
+System.out.println(s1.equals(s2)); // ??? false
+System.out.println(s1.equalsIgnoreCase(s2)); // ??? true
+System.out.println(s1.compareTo(s2)); // ??? 32
+System.out.println(s1.compareToIgnoreCase(s2)); // ??? 0
+
+
+	##StringBuffer vs StringBuilder##
+
+Example 01:
+
+StringBuffer s1 = new StringBuffer("Sunbeam");
+StringBuffer s2 = new StringBuffer("Sunbeam");
+System.out.println(s1 == s2); // false
+System.out.println(s1.equals(s2)); // false
+
+Example 02:
+
+StringBuffer s1 = new StringBuffer("Sunbeam");
+String s2 = new String("Sunbeam");
+System.out.println(s1 == s2); // false
+System.out.println(s1.equals(s2)); // false
+
+Example 03:
+
+String s1 = new String("Sunbeam");
+StringBuffer s2 = new StringBuffer("Sunbeam");
+System.out.println(s1.equals(s2)); // false -- String compared with
+StringBuffer
+System.out.println(s1.equals(s2.toString())); // true -- String compared
+with String
+
+Example 04:
+
+StringBuffer s1 = new StringBuffer("Sunbeam");
+StringBuffer s2 = s1.reverse();
+System.out.println(s1 == s2); // true
+System.out.println(s1.equals(s2)); // true
+
+Example 05:
+
+StringBuilder s1 = new StringBuilder("Sunbeam");
+StringBuilder s2 = new StringBuilder("Sunbeam");
+System.out.println(s1 == s2); // false
+System.out.println(s1.equals(s2)); // false -- calls Object.equals()
+
+Example 06:
+
+StringBuffer s = new StringBuffer();
+System.out.println("Capacity: " + s.capacity() + ", Length: " + s.length());
+// 16, 0
+s.append("1234567890");
+System.out.println("Capacity: " + s.capacity() + ", Length: " + s.length());
+// 16, 10
+s.append("ABCDEFGHIJKLMNOPQRSTUV");
+System.out.println("Capacity: " + s.capacity() + ", Length: " + s.length());
+// 34, 32
+
+

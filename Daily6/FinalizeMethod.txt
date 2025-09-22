@@ -1,0 +1,20 @@
+	##########(demo05)###########
+
+The finalize() method in Java — while deprecated since Java 9 and strongly discouraged for use — historically had a specific intended significance. Let’s explore its original purpose, practical problems, and why it’s obsolete today.
+
+🧩 1. Original Significance / Purpose of finalize()
+➤ Meant as a “Safety Net” for Resource Cleanup
+The finalize() method was designed to give an object a last chance to clean up resources before it’s garbage collected — especially non-memory resources like:
+
+File handles
+Database connections
+Network sockets
+Native memory (via JNI)
+
+⚠️ 2. Why It’s Problematic (The Dark Side of finalize())
+Despite its good intentions, finalize() has serious flaws:
+
+❌ Unpredictable Execution
+There’s no guarantee finalize() will ever be called.
+Even calling System.gc() doesn’t force it.
+Your app might exit before finalization happens → resource leaks.

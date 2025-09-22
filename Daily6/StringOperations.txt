@@ -1,0 +1,99 @@
+	###############(demo06)###############
+##[String Operations]
+package com.sunbeam;
+
+public class Program {
+
+	public static void main1(String[] args) {
+		// String class in Java -- represents immutable "sequence of characters"
+		// length() returns number of chars
+		// charAt() returns char at given index -- 0 to length()-1
+		// "str" reference is created on "stack"
+		// "Sunbeam" string literal/constant is created on String pool (in heap)
+		String str = "Sunbeam"; 
+		System.out.println("Length : "+ str.length());
+		for(int i = 0 ; i < str.length() ; i++) {
+			char ch = str.charAt(i); //Returns the char value at the specified index.
+			System.out.print(ch);
+		}
+	}
+	
+	public static void main2(String[] args) {
+		// length(), charAt()(String is a class in java represents immutable "sequence of chars") 
+		//new String objects are created on heap 
+		String str = new String("Sunbeam"); 
+		System.out.println("Length : "+ str.length());
+		for(int i = 0 ; i < str.length() ; i++) {
+			char ch = str.charAt(i); //Returns the char value at the specified index.
+			System.out.print(ch);
+		}
+	}
+	public static void main3(String[] args) {
+		//indexOf() ,lastIndexOf()
+		String str = "Sunbeam Infotech"; 
+		char ch = 'e'; 
+		
+		int idx = str.indexOf(ch); 
+		//Returns the index within this string of the first occurrence 
+		//of the specified character
+		System.out.println(" char " + ch + " is at index " + idx); //4 
+		
+		ch = 't'; 
+		idx = str.indexOf(ch); 
+		System.out.println(" char " + ch + " is at index " + idx); //12
+		
+		ch = 't'; 
+		idx = str.lastIndexOf(ch); 
+		System.out.println(" char " + ch + " is at index " + idx); //12
+		
+		ch = 'x'; 
+		idx = str.indexOf(ch); // -1 
+		System.out.println(" char " + ch + " is at index " + idx); //-1
+	}
+	public static void main4(String[] args) {
+		//toUpperCase(), toLowerCase()
+		// strings are immutable.
+		// operations performed on string will create a new object with modified contents.
+		String str = "Sunbeam"; 
+		String s1 = str.toUpperCase(); 
+		System.out.println(s1);
+		String s2 = str.toLowerCase(); 
+		System.out.println(s2);
+	}
+	public static void main5(String[] args) {
+		String s1 = "Sunbeam" , s2 = "Infotech"; 
+		String str = s1.concat(s2); 
+		System.out.println(str); //SunbeamInfotech
+	}
+	public static void main6(String[] args) {
+		//substring()
+		String str = "Sunbeam Infotech"; 
+		String s1 = str.substring(8); 
+		//Returns a string that is a substring of this string. 
+		//The substring begins with the character at the specified index 
+		//and extends to the end of this string.
+		System.out.println(s1);
+		String s2 = str.substring(8, 11); 
+		System.out.println(s2);
+	}
+	public static void main7(String[] args) {
+		//split()
+		String str = "this is just an example"; 
+		String[] parts = str.split(" "); 
+		for(String part : parts)
+			System.out.println(part);
+	}
+	public static void main8(String[] args) {
+		//trim() // removes leading and trailing spaces 
+		String str = "                Sunbeam Infotech             "; 
+		System.out.println("Length : "+str.length()); //45 
+		String s1 = str.trim(); 
+		System.out.println("Length : "+s1.length()); //16
+	}
+	public static void main9(String[] args) {
+		int year = 1998; 
+		String str = "Sunbeam"; 
+		String s1 = String.format("%s was founded in the year %d",str,year); //static method  
+		System.out.println(s1);
+	}
+}
