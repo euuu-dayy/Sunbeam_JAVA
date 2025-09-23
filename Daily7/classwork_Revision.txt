@@ -105,11 +105,21 @@ this.obj = obj;
 
 
 
+===========================================================
+
+## (demo01) -- Exception Handling
+
+## (demo02) -- Generic Exception Handling
+
+## (demo03) -- User defined Exception class
 
 
+===========================================================
 
+What is difference between throw and throws ?
 
-
+=> throw --> Manually throw an exception object
+   throws --> Declare that method might throw exceptions
 
 
 
