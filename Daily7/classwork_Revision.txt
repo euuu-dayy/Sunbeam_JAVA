@@ -109,7 +109,8 @@ this.obj = obj;
 
 ## (demo01) -- Exception Handling
 
-## (demo02) -- Generic Exception Handling
+## (demo02) -- Generic Exception Handling ----->  catch(Throwable e)  
+	Throwable is super class of Error , Exception
 
 ## (demo03) -- User defined Exception class
 
