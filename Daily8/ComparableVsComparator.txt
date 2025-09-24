@@ -1,0 +1,24 @@
+	#### Comparable Vs Comparator ####
+Comparable and Comparartor both are Interfaces 
+
+Comparable -	
+	1. java.lang package
+	2. compareTo method
+	3. used to compare this.object == other.object
+	4. comparision logic is written inside the class
+	5. Natural Ordering (Inbuilt Ordering)
+	6. interface Comparable <T>{
+		int compareTo(T o);
+	   }
+	7. Arrays.sort(arr); (Internally uses Quick Sort)
+
+Comparator -
+	1. java.util package
+	2. compare method
+	3. used to compare two objects outside class
+	4. comparision logic is written outside the class
+	5. No Natural Ordering	
+	6. interface Comparator <T>{
+		int compare (T obj1 , T obj2);
+	   }
+	7. Arrays.sort(arr,new ProductPriceAscComparator); (Internally uses QuickSort)
