@@ -1,0 +1,24 @@
+1. Java Editions
+	Java ME
+	Java SE
+	Java EE
+
+2. Java Compilation and Exectution
+
+3. JDK , JRE , JVM
+
+4. Meaning of -  
+	1. public static void main (String[] args)
+	2. System.out.println();
+
+5. Class and Object
+
+6. Datatypes -
+	1. Primitive 
+	2. Reference
+
+7. Main method in java can be overloaded
+
+8. Scanner (java.util)
+
+9. Widening and Narrowing
