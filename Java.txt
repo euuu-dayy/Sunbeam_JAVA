@@ -1,3 +1,6 @@
+static method cant be abstract
+
+------------------------------------------------------------------------------------------
 1. Java Editions
 	Java ME
 	Java SE
