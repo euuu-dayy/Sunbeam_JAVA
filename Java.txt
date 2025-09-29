@@ -37,6 +37,22 @@ static method cant be abstract
 
 9. Widening and Narrowing
 
+10. System class (java.lang)
+
+11. Naming conventions (day1 pdf)
+
+12. sizes of datatypes -
+ boolean - not specified
+ byte - 1 byte 
+ char - 2
+ short - 2
+ int - 4
+ long - 8
+ float - 4
+ double - 8
+
+13. escape sequences
+
 //Day 2
 
 1. Wrapper Classes --> Uses Collection and Generics
@@ -86,6 +102,29 @@ static method cant be abstract
 11. Singelton Class
 
 12. Constructor chaining
+
+13. Java buzz words
+
+Simple
+Object Oriented
+Distributed
+Compiled and Interpreted
+Robust
+Dynamic
+
+14. 
+ setter - mutators
+ getter - inspectors 
+ facilitators (eg. obj.display)
+
+15. Calendar class
+
+16. Initialization (once) and Assignment(multiple times)
+
+17. Constructor - used to initialize instance
+
+18. Constructor chaining (using this reference) 
+
 
 //Day 3
 
