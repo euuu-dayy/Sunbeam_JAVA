@@ -1,6 +1,8 @@
 static method cant be abstract
 
 ------------------------------------------------------------------------------------------
+//Day 1
+
 1. Java Editions
 	Java ME
 	Java SE
@@ -17,11 +19,74 @@ static method cant be abstract
 5. Class and Object
 
 6. Datatypes -
-	1. Primitive 
-	2. Reference
+	1. Primitive (on stack)
+	2. Reference (on heap) ,
+	Note - Reference variable gets space (on stack)
+
+	Person p = new Person(); 
+
+	- p (the reference) lives on the stack (if inside a method).
+
+	- The actual new Person() object lives on the heap.
+
+	- If Person has primitive fields, those are stored inside that heap object.
 
 7. Main method in java can be overloaded
 
 8. Scanner (java.util)
 
 9. Widening and Narrowing
+
+//Day 2
+
+1. Wrapper Classes --> Uses Collection and Generics
+
+2. Boxing - (Primitive to Wrapper)
+   Unboxing (Wrapper to Primitive)
+
+   Autoboxing and Autounboxing (Java 5.0)
+
+   //String.valueOf(10)  --> Boxing
+   //Integer.parseInt("10") --> Unboxing
+
+3. Loops
+	//Difference between while loop and do-while loop 
+	1. for loop (entry control loop)
+	2. while loop (entry control loop)
+	3. do-while loop (exit control loop)
+	4. forEach loop (Internally uses Iterator)
+	5.Labelled Loops
+
+4. Message Passing
+
+5. Diagram of Message Passing
+	1. Method Area
+	2. Heap
+	3. Stack
+
+6. Characteristics of Object
+	SBI
+
+7. this reference -
+	- using this reference non-static fields and and non static methods communicate
+
+8. Major Pillars - 
+	Hierarchy - Inheritance
+	Encapsulation
+	Modularity - Packages
+	Abstraction 
+
+9. Minor Pillars - 
+	Typing - Polymorphism
+	Concurrency - Multithreading
+	Persistence - File IO
+
+10. Tester Class
+
+11. Singelton Class
+
+12. Constructor chaining
+
+//Day 3
+
+1. Packages
