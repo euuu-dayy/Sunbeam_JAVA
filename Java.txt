@@ -139,4 +139,23 @@ Dynamic
 
 3.Arrays
 
-4.2D Arrays
+4. Array of non primitive type i.e reference
+
+5.2D Arrays
+
+6.Ragged Array
+
+7. Variable arity method
+
+8. Method overloading (NTO)
+ Number of arguments 
+ Type of arguments
+ Order of arguments
+
+ -static merhods can be overloaded 
+ - return type is not considers -> catching values frim function is optional
+
+9. How to achieve call by address in java -> using arrays
+
+10. Object class - 
+ Every class in java is directly and indirectly inherited from Object class
