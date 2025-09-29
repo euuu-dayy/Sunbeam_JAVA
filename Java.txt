@@ -1,6 +1,6 @@
 static method cant be abstract
 
-------------------------------------------------------------------------------------------
+----------------------------------------------------------
 //Day 1
 
 1. Java Editions
@@ -90,3 +90,14 @@ static method cant be abstract
 //Day 3
 
 1. Packages
+
+2. Access Modifiers 
+ (Consider diagram of 2 seperate packages)
+ 1.private(lowest)
+ 2.default
+ 3.protected
+ 4.public
+
+3.Arrays
+
+4.2D Arrays
